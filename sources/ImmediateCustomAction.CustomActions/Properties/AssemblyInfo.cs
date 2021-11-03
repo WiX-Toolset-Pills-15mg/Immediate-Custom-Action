@@ -1,5 +1,5 @@
-// WixQ
-// Copyright (C) 2019 Dust in the Wind
+// Wix Toolset Pills 15mg
+// Copyright (C) 2019 - 2021 Dust in the Wind
 // 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
