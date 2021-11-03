@@ -1,0 +1,4 @@
+WiX Toolset Pills - Immediate Custom Action
+==============================================================================
+
+This is a dummy file.

@@ -1,0 +1,1 @@
+msiexec /i ImmediateCustomAction.msi /l*vx install.log
