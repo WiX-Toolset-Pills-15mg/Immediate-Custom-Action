@@ -24,7 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
             <Component Id="DummyFileComponent">
                 <!-- At least one file is needed to be deployed by the installer. -->
-                <File Id="DummyFile"  Source="$(var.ProjectDir)dummy.txt"/>
+                <File Id="DummyFile" Source="$(var.ProjectDir)dummy.txt" />
             </Component>
         </ComponentGroup>
 

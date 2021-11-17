@@ -19,7 +19,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-    <Product Id="*" Name="Immediate Custom Action - WiX Toolset Pill" Language="1033" Version="1.0.0.0" Manufacturer="Dust in the Wind" UpgradeCode="39e790d0-b8b5-4bb7-a17a-aa277c85286d">
+    <Product
+        Id="*"
+        Name="Immediate Custom Action - WiX Toolset Pill"
+        Language="1033"
+        Version="1.0.0.0"
+        Manufacturer="Dust in the Wind"
+        UpgradeCode="39e790d0-b8b5-4bb7-a17a-aa277c85286d">
+
         <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
         <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
@@ -31,11 +38,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
         <!-- This is the reference to the dll containing the custom actions. -->
         <!-- Actually, the reference is to the "<name>.CA.dll" file not the dotnet dll. -->
-        <Binary Id="CustomActionsBinary" SourceFile="$(var.ImmediateCustomAction.CustomActions.TargetDir)$(var.ImmediateCustomAction.CustomActions.TargetName).CA.dll" />
+        <Binary
+            Id="CustomActionsBinary"
+            SourceFile="$(var.ImmediateCustomAction.CustomActions.TargetDir)$(var.ImmediateCustomAction.CustomActions.TargetName).CA.dll" />
 
         <InstallExecuteSequence>
             <!-- Here we use the custom action created earlier. -->
-            <Custom Action="LogSomething" After="InstallFiles"/>
+            <Custom Action="LogSomething" After="InstallFiles" />
         </InstallExecuteSequence>
 
     </Product>
