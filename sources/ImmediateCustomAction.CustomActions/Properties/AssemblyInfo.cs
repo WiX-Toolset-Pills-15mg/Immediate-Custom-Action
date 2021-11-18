@@ -23,7 +23,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ImmediateCustomAction.CustomActions")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyCompany("Dust in the Wind")]
-[assembly: AssemblyProduct("Immediate Custom Action")]
+[assembly: AssemblyProduct("Wix Toolset Pills 15mg")]
 [assembly: AssemblyCopyright("Copyright © Dust in the Wind 2019-2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
