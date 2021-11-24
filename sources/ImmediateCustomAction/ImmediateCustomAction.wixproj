@@ -20,7 +20,7 @@
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CustomActions\LogSomething.wxs" />
+    <Compile Include="CustomActions.wxs" />
     <Compile Include="Directories.wxs" />
     <Compile Include="Product.wxs" />
     <Compile Include="ProductComponents.wxs" />
@@ -33,9 +33,6 @@
     <Content Include="uninstall.bat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CustomActions" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ImmediateCustomAction.CustomActions\ImmediateCustomAction.CustomActions.csproj">
