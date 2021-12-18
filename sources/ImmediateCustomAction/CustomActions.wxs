@@ -22,7 +22,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <Fragment>
 
         <!--
+        ====================================================================================================
         Step 2: Reference the custom action library
+        ====================================================================================================
         
         A reference to the library file (.CA.dll file) that contains the custom actions must be created.
         
@@ -30,6 +32,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             - "<name>.dll" - a normal .NET class library assembly.
             - "<name>.CA.dll" - a wrapper over the previously created .NET assembly that can be consumed by Windows Installer.
         This trick is needed because, natively, Windows Installer cannot consume .NET assemblies.
+        
+        Go To: below in this file
         -->
 
         <Binary
@@ -37,7 +41,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             SourceFile="$(var.ImmediateCustomAction.CustomActions.TargetDir)$(var.ImmediateCustomAction.CustomActions.TargetName).CA.dll" />
 
         <!--
+        ====================================================================================================
         Step 3: Create the custom action.
+        ====================================================================================================
         
         The custom action refers the static method previously implemented in C#.
         

@@ -51,7 +51,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
         <InstallExecuteSequence>
             <!--
+            ====================================================================================================
             Step 4: Add custom action to the execution sequence
+            ====================================================================================================
             
             The order in which the custom actions are executed is specified using the "After" or "Before" attributes.
             These attributes help placing the new custom action relative to another existing one,

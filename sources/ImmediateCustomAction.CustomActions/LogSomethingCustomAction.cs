@@ -20,7 +20,9 @@ namespace DustInTheWind.ImmediateCustomAction.CustomActions
 {
     public class LogSomethingCustomAction
     {
+        // ====================================================================================================
         // Step 1: Implement the custom action
+        // ====================================================================================================
         //
         // Create a public static method having the CustomAction attribute on it.
         // It will be, later, referenced in the "immediate" custom action from WiX.
