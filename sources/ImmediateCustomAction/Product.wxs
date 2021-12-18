@@ -35,22 +35,30 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
         <MediaTemplate />
 
+        <!--
+        We created this property to demonstrate how it can be accessed, from the custom action's implementation from C#.
+        Note: This property is public, so it can be provided as argument from the command line.
+        -->
+        <Property Id="MESSAGE" Value="This is the default message." />
+
         <Feature
             Id="ProductFeature"
-            Title="ImmediateCustomAction"
+            Title="Immediate Custom Action"
             Level="1">
 
             <ComponentGroupRef Id="ProductComponents" />
         </Feature>
 
-        <!-- This is the reference to the dll containing the custom actions. -->
-        <!-- Actually, the reference is to the "<name>.CA.dll" file not the dotnet dll. -->
-        <Binary
-            Id="CustomActionsBinary"
-            SourceFile="$(var.ImmediateCustomAction.CustomActions.TargetDir)$(var.ImmediateCustomAction.CustomActions.TargetName).CA.dll" />
-
         <InstallExecuteSequence>
-            <!-- Here we use the custom action created earlier. -->
+            <!--
+            Step 4: Add custom action to the execution sequence
+            
+            The order in which the custom actions are executed is specified using the "After" or "Before" attributes.
+            These attributes help placing the new custom action relative to another existing one,
+            in this example, it is placed after the action called "InstallFiles".
+            
+            END
+            -->
             <Custom Action="LogSomething" After="InstallFiles" />
         </InstallExecuteSequence>
 

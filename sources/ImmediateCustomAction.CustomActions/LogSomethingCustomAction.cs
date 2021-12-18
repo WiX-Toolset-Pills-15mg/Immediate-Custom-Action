@@ -20,20 +20,38 @@ namespace DustInTheWind.ImmediateCustomAction.CustomActions
 {
     public class LogSomethingCustomAction
     {
+        // Step 1: Implement the custom action
+        //
+        // Create a public static method having the CustomAction attribute on it.
+        // It will be, later, referenced in the "immediate" custom action from WiX.
+        //
+        // Go To: CustomActions.wxs
+
         [CustomAction("LogSomething")]
         public static ActionResult Execute(Session session)
         {
+            session.Log("--> Begin LogSomething custom action");
             try
             {
-                session.Log("Begin LogSomething custom action");
-
                 session.Log("This is a demo, to show how to create and execute an immediate custom action.");
+
+                // If the custom action is executed "immediate" as in this example, the session object
+                // is available and properties can be easily retrieved from it.
+                //
+                // Note: The MESSAGE property is created in the "Product.wxs" file.
+
+                string message = session["MESSAGE"];
+                session.Log("Message: " + message);
+
+                // Note: If the custom action is executed "deferred", by the time it actually gets executed, the session
+                // is no longer available. See the Deferred-Custom-Action pill for the solution to this problem:
+                // https://github.com/WiX-Toolset-Pills-15mg/Deferred-Custom-Action
 
                 return ActionResult.Success;
             }
             finally
             {
-                session.Log("End LogSomething custom action");
+                session.Log("--> End LogSomething custom action");
             }
         }
     }

@@ -21,7 +21,28 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
     <Fragment>
 
-        <!-- Here we must create the custom action that refer the custom action method from c#. -->
+        <!--
+        Step 2: Reference the custom action library
+        
+        A reference to the library file (.CA.dll file) that contains the custom actions must be created.
+        
+        A custom actions project for WiX created in C# will generate two files:
+            - "<name>.dll" - a normal .NET class library assembly.
+            - "<name>.CA.dll" - a wrapper over the previously created .NET assembly that can be consumed by Windows Installer.
+        This trick is needed because, natively, Windows Installer cannot consume .NET assemblies.
+        -->
+
+        <Binary
+            Id="CustomActionsBinary"
+            SourceFile="$(var.ImmediateCustomAction.CustomActions.TargetDir)$(var.ImmediateCustomAction.CustomActions.TargetName).CA.dll" />
+
+        <!--
+        Step 3: Create the custom action.
+        
+        The custom action refers the static method previously implemented in C#.
+        
+        Go To: Product.wxs
+        -->
         <CustomAction
             Id="LogSomething"
             BinaryKey="CustomActionsBinary"

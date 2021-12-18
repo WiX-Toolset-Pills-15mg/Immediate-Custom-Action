@@ -1,4 +1,10 @@
 WiX Toolset Pills - Immediate Custom Action
 ==============================================================================
 
-This is a dummy file.
+This file is part of the "Immediate Custom Action" Pill.
+
+The pill demonstrates how to create an immediate custom action in C#.
+Immediate custom actions, are executed straight away in the order in which they appear in the execution sequence.
+
+For more details please chech the GitHub repository:
+https://github.com/WiX-Toolset-Pills-15mg/Immediate-Custom-Action

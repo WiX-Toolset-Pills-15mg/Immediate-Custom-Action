@@ -1,0 +1,1 @@
+msiexec /i ImmediateCustomAction.msi /l*vx install.log MESSAGE="This is a message passed from command line."
