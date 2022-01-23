@@ -28,7 +28,7 @@ Sometimes a quick look into the log files may be necessary, but running the inst
 
 ## Suggestions
 
-Any suggestion or opinion is appreciated. Please, feel free to add a [GitHub Issue](https://github.com/WiX-Toolset-Pills-15mg/Planned-Failure/issues/new?assignees=&labels=&template=feature_request.md&title=).
+Any suggestion or opinion is appreciated. Please, feel free to add a [GitHub Issue](https://github.com/WiX-Toolset-Pills-15mg/Immediate-Custom-Action/issues/new?assignees=&labels=&template=feature_request.md&title=).
 
 ## Donations
 
