@@ -10,7 +10,7 @@ An immediate custom action is executed exactly where it is placed in the install
 
 ### a) Tutorial (article)
 
-A step-by-step tutorial will be available soon.
+A step-by-step tutorial can be found in the [doc/article/README.md](doc/article/README.md) document. You can find there explanations on solving the described problem.
 
 ### b) Code example
 

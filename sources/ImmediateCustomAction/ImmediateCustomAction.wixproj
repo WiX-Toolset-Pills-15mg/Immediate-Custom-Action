@@ -26,9 +26,9 @@
     <Compile Include="ProductComponents.wxs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="install-with-message.bat" />
     <Content Include="dummy.txt" />
-    <Content Include="install-simple.bat">
+    <Content Include="install-with-message.bat" />
+    <Content Include="install.bat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="uninstall.bat">

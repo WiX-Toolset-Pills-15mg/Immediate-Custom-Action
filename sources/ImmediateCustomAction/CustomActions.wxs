@@ -54,7 +54,7 @@ NEXT: CustomActions.wxs
                 
             - var.ImmediateCustomAction.CustomActions.TargetName
                 - contains the name of the custom action's assembly. This is the name of the file without
-                  extenstion.
+                  extension.
         
         NEXT: CustomActions.wxs
         -->
@@ -65,7 +65,7 @@ NEXT: CustomActions.wxs
 
         <!--
         ====================================================================================================
-        Step 5: Create the custom action.
+        Step 6: Create the custom action.
         ====================================================================================================
         
         The custom action refers the static method previously implemented in C# by specifying the binary

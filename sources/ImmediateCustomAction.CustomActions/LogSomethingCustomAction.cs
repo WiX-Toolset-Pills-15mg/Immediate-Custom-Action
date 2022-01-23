@@ -38,11 +38,11 @@ namespace DustInTheWind.ImmediateCustomAction.CustomActions
         // Step 3: Implement the custom action
         // ====================================================================================================
         // 
-        // Create a public static method having the [CustomAction] attribute on it.
-        // It will be, later, referenced in the "immediate" custom action from WiX.
+        // Create a public static method having the [CustomAction] attribute on it. It will be, later,
+        // referenced in the custom action tag from WiX.
         // 
-        // The name of the custom action can be provider as parameter. In this case "LogSomething".
-        // If it s not provided explicitly, it will be the name of the function: "Execute".
+        // The name of the custom action can be provider as parameter. In this case, it is "LogSomething".
+        // If it is not provided explicitly, it will be the name of the function: "Execute".
         // 
         // NEXT: CustomActions.wxs
 
@@ -52,8 +52,6 @@ namespace DustInTheWind.ImmediateCustomAction.CustomActions
             session.Log("--> Begin LogSomething custom action");
             try
             {
-                session.Log("This is a demo, to show how to create and execute an immediate custom action.");
-
                 // If the custom action is executed "immediate" as in this example, the session object
                 // is available and properties can be easily retrieved from it.
                 //
