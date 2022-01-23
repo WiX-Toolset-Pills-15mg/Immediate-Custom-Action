@@ -18,22 +18,45 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
+<!--
+====================================================================================================
+Step 4: Reference the custom action library
+====================================================================================================
+
+A reference to the library file (*.CA.dll file) that contains the custom actions must be added:
+    - right click on the project -> Add -> Reference... -> Projects -> <the project name> -> Add -> OK
+
+A custom actions project for WiX created in C# will generate two files:
+    - "<name>.dll" - a normal .NET class library assembly.
+    - "<name>.CA.dll" - a wrapper over the previously created .NET assembly that can be consumed by Windows Installer.
+This trick is needed because, natively, Windows Installer cannot consume .NET assemblies.
+
+NEXT: CustomActions.wxs
+-->
+
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
     <Fragment>
 
         <!--
         ====================================================================================================
-        Step 2: Reference the custom action library
+        Step 5: Add the <Binary> tag
         ====================================================================================================
         
-        A reference to the library file (.CA.dll file) that contains the custom actions must be created.
+        The <binary> tag provides an alias for the dll that contains the implementation of the custom
+        action.
         
-        A custom actions project for WiX created in C# will generate two files:
-            - "<name>.dll" - a normal .NET class library assembly.
-            - "<name>.CA.dll" - a wrapper over the previously created .NET assembly that can be consumed by Windows Installer.
-        This trick is needed because, natively, Windows Installer cannot consume .NET assemblies.
+        By adding the custom action's project as a reference, WiX Toolset is automatically creating a number
+        of useful variables like:
         
-        Go To: below in this file
+            - var.ImmediateCustomAction.CustomActions.TargetDir
+                - contains the path to the custom action's dll. (That bin\Debug or bin\Release where the
+                  project is built.)
+                
+            - var.ImmediateCustomAction.CustomActions.TargetName
+                - contains the name of the custom action's assembly. This is the name of the file without
+                  extenstion.
+        
+        NEXT: CustomActions.wxs
         -->
 
         <Binary
@@ -42,10 +65,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
         <!--
         ====================================================================================================
-        Step 3: Create the custom action.
+        Step 5: Create the custom action.
         ====================================================================================================
         
-        The custom action refers the static method previously implemented in C#.
+        The custom action refers the static method previously implemented in C# by specifying the binary
+        library (BinaryKey) and the name of the custom action (DllEntry).
         
         Go To: Product.wxs
         -->

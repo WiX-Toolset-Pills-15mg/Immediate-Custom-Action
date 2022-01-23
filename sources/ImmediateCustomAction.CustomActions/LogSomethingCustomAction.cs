@@ -18,16 +18,33 @@ using Microsoft.Deployment.WindowsInstaller;
 
 namespace DustInTheWind.ImmediateCustomAction.CustomActions
 {
+    // ====================================================================================================
+    // Step 2: Create the custom actions project
+    // ====================================================================================================
+    // 
+    // A custom action project is a class library with additional instructions that creates the *.CA.dll
+    // file as a wrapper over the normal .NET dll assembly.
+    // This is necessary because Windows Installer is not able to consume .NET assemblies directly. This
+    // *.CA.dll acts as an adapter.
+    // 
+    // Note: Because of this, make sure to always create a project of type "C# Custom Action Project for
+    //       WiX v3" and not a normal class library project.
+    // 
+    // NEXT: LogSomethingCustomAction.cs
+
     public class LogSomethingCustomAction
     {
         // ====================================================================================================
-        // Step 1: Implement the custom action
+        // Step 3: Implement the custom action
         // ====================================================================================================
-        //
-        // Create a public static method having the CustomAction attribute on it.
+        // 
+        // Create a public static method having the [CustomAction] attribute on it.
         // It will be, later, referenced in the "immediate" custom action from WiX.
-        //
-        // Go To: CustomActions.wxs
+        // 
+        // The name of the custom action can be provider as parameter. In this case "LogSomething".
+        // If it s not provided explicitly, it will be the name of the function: "Execute".
+        // 
+        // NEXT: CustomActions.wxs
 
         [CustomAction("LogSomething")]
         public static ActionResult Execute(Session session)
@@ -45,8 +62,11 @@ namespace DustInTheWind.ImmediateCustomAction.CustomActions
                 string message = session["MESSAGE"];
                 session.Log("Message: " + message);
 
-                // Note: If the custom action is executed "deferred", by the time it actually gets executed, the session
-                // is no longer available. See the Deferred-Custom-Action pill for the solution to this problem:
+                // Note: If the custom action is executed "deferred", by the time it actually gets executed,
+                // the session is no longer available and the properties cannot be retrieved as previously
+                // shown.
+                //
+                // See the Deferred-Custom-Action pill for the solution to this problem:
                 // https://github.com/WiX-Toolset-Pills-15mg/Deferred-Custom-Action
 
                 return ActionResult.Success;

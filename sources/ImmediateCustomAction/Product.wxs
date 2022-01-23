@@ -19,6 +19,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+    <!--
+    ====================================================================================================
+    START: Overview
+    ====================================================================================================
+    
+    Let's create a custom action that writes a message into the log file. The message will be provided
+    from the command line through a property called MESSAGE.
+    
+    Note: The MESSAGE property will also have a default value for the case when none is provided from
+          command line.
+          
+    NEXT: Product.wxs
+    -->
+
     <Product
         Id="*"
         Name="Immediate Custom Action - WiX Toolset Pill"
@@ -36,8 +51,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         <MediaTemplate />
 
         <!--
-        We created this property to demonstrate how it can be accessed, from the custom action's implementation from C#.
-        Note: This property is public, so it can be provided as argument from the command line.
+        ====================================================================================================
+        Step 1: Create the MESSAGE property
+        ====================================================================================================
+        
+        We created this property to demonstrate how it can be accessed, from the custom action's
+        implementation from C#.
+        
+        Note: This property is all uppercase. Windows Installer interprets this as public, so it can be
+        provided as argument from the command line.
+        
+        NEXT: LogSomethingCustomAction.cs
         -->
         <Property Id="MESSAGE" Value="This is the default message." />
 
@@ -50,18 +74,26 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         </Feature>
 
         <InstallExecuteSequence>
+
             <!--
             ====================================================================================================
-            Step 4: Add custom action to the execution sequence
+            Step 6: Add custom action to the execution sequence
             ====================================================================================================
             
-            The order in which the custom actions are executed is specified using the "After" or "Before" attributes.
-            These attributes help placing the new custom action relative to another existing one,
-            in this example, it is placed after the action called "InstallFiles".
+            The order in which the custom actions are executed is specified using the "After" or "Before"
+            attributes. These attributes help placing the new custom action relative to another one, already
+            present in the sequence. In this example, let's place it after the action called "InstallFiles".
             
-            END
+            Note:
+            The "InstallExecuteSequence" is the sequence of custom actions executed by the server application
+            of the installer. For the client execution, the action must be added into the the
+            "<InstallUISequence>" tag.
+            See the Client-Server-Custom-Action tutorial for more details.
+            
+            NEXT: install-with-message.bat
             -->
             <Custom Action="LogSomething" After="InstallFiles" />
+
         </InstallExecuteSequence>
 
     </Product>
