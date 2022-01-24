@@ -22,7 +22,7 @@ An immediate custom action is executed exactly where it is placed in the install
 
 - A shorter version of the tutorial can be found directly in the source code. Open Visual Studio solution and search (Ctrl+Shift+F) for the `START` comment, then follow the `Step` comments.
 
-**Note:** The `NEXT` tags at the end of each comment indicates the file where to search for the next `Step`.
+- **Note:** The `NEXT` tags at the end of each comment indicates the file where to search for the next `Step`.
 
 ### d) Log file examples
 
