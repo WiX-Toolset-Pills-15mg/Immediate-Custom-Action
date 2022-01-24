@@ -3,7 +3,8 @@
 :: ====================================================================================================
 ::
 :: Install the MSI and look into the "install-with-message.log" file.
-:: Search for the "Action Start [...] LogSomething.". The logged message should be visible somewhere after that line.
+:: Search for the "Action Start [timestamp]: LogSomething." message. Our custom message should be
+:: present somewhere after that line.
 ::
 :: END
 
