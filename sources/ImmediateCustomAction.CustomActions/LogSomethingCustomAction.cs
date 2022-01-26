@@ -42,7 +42,7 @@ namespace DustInTheWind.ImmediateCustomAction.CustomActions
         // referenced in the custom action tag from WiX.
         // 
         // The name of the custom action can be provider as parameter. In this case, it is "LogSomething".
-        // If it is not provided explicitly, it will be the name of the function: "Execute".
+        // If it is not provided explicitly, it will be the name of the function itself: "Execute".
         // 
         // NEXT: CustomActions.wxs
 

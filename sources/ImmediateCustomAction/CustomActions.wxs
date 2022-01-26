@@ -42,7 +42,7 @@ NEXT: CustomActions.wxs
         Step 5: Add the <Binary> tag
         ====================================================================================================
         
-        The <binary> tag provides an alias for the dll that contains the implementation of the custom
+        The <Binary> tag provides an alias for the dll that contains the implementation of the custom
         action.
         
         By adding the custom action's project as a reference, WiX Toolset is automatically creating a number
