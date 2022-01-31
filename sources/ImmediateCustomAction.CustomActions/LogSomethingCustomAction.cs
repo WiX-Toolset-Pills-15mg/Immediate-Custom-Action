@@ -1,5 +1,5 @@
 // WiX Toolset Pills 15mg
-// Copyright (C) 2019-2021 Dust in the Wind
+// Copyright (C) 2019-2022 Dust in the Wind
 // 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@ namespace DustInTheWind.ImmediateCustomAction.CustomActions
     // Note: Because of this, make sure to always create a project of type "C# Custom Action Project for
     //       WiX v3" and not a normal class library project.
     // 
-    // NEXT: LogSomethingCustomAction.cs
+    // NEXT: LogSomethingCustomAction.cs (DOWN)
 
     public class LogSomethingCustomAction
     {
